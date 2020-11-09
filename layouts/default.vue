@@ -1,14 +1,7 @@
 <template>
   <v-app light>
-
     <!--- --->
-    <v-navigation-drawer
-      v-model="drawer"
-      
-      :clipped="clipped"
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" :clipped="clipped" fixed app>
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -26,8 +19,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-<!--  -->
-
+    <!--  -->
 
     <!-- drawer items -->
     <v-app-bar :clipped-left="clipped" fixed app>
@@ -36,16 +28,13 @@
     </v-app-bar>
     <!-- drawer items -->
 
-
-
-  <!-- main -->
+    <!-- main -->
     <v-main>
       <v-container>
         <nuxt />
       </v-container>
     </v-main>
-  <!--main -->
-
+    <!--main -->
 
     <footer-component></footer-component>
   </v-app>
@@ -58,14 +47,9 @@ export default {
   components: {
     FooterComponent,
   },
-   methods: {
-    toggleDrawer() {
-      this.$refs.drawer.toggleDrawer()
-    },
-  },
   data() {
     return {
-      title:'Titel',
+      title: 'Titel',
       clipped: false,
       drawer: false,
       fixed: false,
@@ -86,9 +70,12 @@ export default {
           to: '/blog',
         },
       ],
-
-
     }
+  },
+  methods: {
+    toggleDrawer() {
+      this.$refs.drawer.toggleDrawer()
+    },
   },
 }
 </script>
